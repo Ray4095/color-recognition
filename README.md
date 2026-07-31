@@ -2,9 +2,11 @@
 
 ## Project Overview
 
-This project uses Python and OpenCV to recognize the six colors of a Rubik's Cube in real time using a webcam.
+This project is a real-time color recognition system developed using Python and OpenCV.
 
-The program detects colored areas, draws a bounding box around them, and displays the name of each detected color.
+The program captures video through a webcam, detects colored regions, draws bounding boxes around them, and displays the name of each recognized color.
+
+The system can be used with different colored objects and is not limited to a specific object or shape.
 
 ## Recognized Colors
 
@@ -41,17 +43,19 @@ pip install opencv-python numpy
 python color_recognition.py
 ```
 
-5. Place a Rubik's Cube in front of the webcam.
+5. Place a colored object in front of the webcam.
 6. Press `S` to save a screenshot.
 7. Press `Q` to close the program.
 
 ## How It Works
 
 1. The webcam captures video frames in real time.
-2. Each frame is converted from BGR to HSV color space.
-3. HSV ranges are used to identify the six Rubik's Cube colors.
-4. Small unwanted areas are removed using image-processing operations.
-5. The program detects the colored regions and draws labeled bounding boxes around them.
+2. Each frame is blurred slightly to reduce camera noise.
+3. The frame is converted from BGR to HSV color space.
+4. HSV ranges are used to recognize the supported colors.
+5. Morphological operations remove small unwanted regions.
+6. Contours are used to locate colored areas.
+7. A labeled bounding box is drawn around each detected region.
 
 ## Output
 
