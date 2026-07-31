@@ -140,7 +140,7 @@ def main():
             2,
         )
 
-        cv2.imshow("Rubik's Cube Color Recognition", frame)
+        cv2.imshow("Real-Time Color Recognition", frame)
 
         key = cv2.waitKey(1) & 0xFF
 
